@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/cashcards") // defining the base URL
 public class CashCardController {
 
-    @GetMapping("/{requestedId}")
+    @GetMapping("/{requestedId}") // remove this code to implement separation of concern
     public ResponseEntity<CashCard> findById(@PathVariable long requestedId) {
         // @PathVariable -- to grab values from the URL
         if (requestedId == 99L) {
