@@ -26,4 +26,8 @@ public class CashCardController {
             return ResponseEntity.notFound().build();
         }
     }
+    @PostMapping
+    private ResponseEntity<Void> createCashCard() {
+        return null;
+    }
 }

@@ -1,5 +1,6 @@
 package com.example.cashcard;
 
+import com.example.cashcard.Model.CashCard;
 import com.jayway.jsonpath.DocumentContext;
 import com.jayway.jsonpath.JsonPath;
 import org.junit.jupiter.api.Test;
@@ -35,4 +36,12 @@ class CashcardApplicationTests {
 		Double amount = documentContext.read("$.amount");
 		assertThat(amount).isEqualTo(123.45);
 	}
+	@Test
+	void shouldCreateANewCashCard() {
+		CashCard newCashCard = new CashCard(null, 250.00);
+		ResponseEntity<Void> createResponse = restTemplate.postForEntity("/cashcards", newCashCard, Void.class);
+
+		assertThat(createResponse.getStatusCode()).isEqualTo(HttpStatus.OK);
+	}
+
 }
