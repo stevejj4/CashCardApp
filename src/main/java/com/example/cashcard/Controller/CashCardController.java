@@ -13,7 +13,7 @@ import java.util.Optional;
 @RequestMapping("/cashcards")
 public class CashCardController {
 
-    private final CashCardRepository cashCardRepository;
+    private final CashCardRepository cashCardRepository; // constructor injection
 
     public CashCardController(CashCardRepository cashCardRepository) {
         this.cashCardRepository = cashCardRepository;
